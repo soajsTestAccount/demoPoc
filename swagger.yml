@@ -1,0 +1,22 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: demoPoc
+host: localhost
+basePath: /demoPoc
+schemes:
+  - http
+paths:
+    readMongo:
+        get:
+            summary: Read from mongo
+    getStatic:
+        get:    
+            summary: Return a static string
+        
+    readMemSql:
+        get:
+            summary: Read from MemSql
+parameters:
+
+definitions:
