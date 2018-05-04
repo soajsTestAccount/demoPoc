@@ -3,7 +3,7 @@ info:
   version: "1.0.0"
   title: demoPoc
 host: localhost
-basePath: /demoPoc
+basePath: /demopoc
 schemes:
   - http
 paths:
