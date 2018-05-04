@@ -7,14 +7,14 @@ basePath: /demoPoc
 schemes:
   - http
 paths:
-    readMongo:
+    /readMongo:
         get:
             summary: Read from mongo
-    getStatic:
+    /getStatic:
         get:    
             summary: Return a static string
         
-    readMemSql:
+    /readMemSql:
         get:
             summary: Read from MemSql
 parameters:
