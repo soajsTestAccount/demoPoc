@@ -30,7 +30,8 @@
     "lodash": "4.17.4",
     "mocha": "3.2.0",
     "request": "2.79.0",
-    "shelljs": "0.7.5"
+    "shelljs": "0.7.5",
+    "mysql": "*"
   },
   "dependencies": {
     "soajs.composer": "*"

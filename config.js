@@ -9,7 +9,7 @@ module.exports = {
 	"serviceName": "demopoc",
 	"serviceGroup": "demo",
 	"serviceVersion": 1,
-	"servicePort": 5110,
+	"servicePort": 4110,
 	"requestTimeout": 30,
 	"requestTimeoutRenewal": 5,
 	"extKeyRequired": false,
@@ -23,7 +23,7 @@ module.exports = {
 	"dbs": [
 		{
 			"prefix": "",
-			"name": "db4Poc",
+			"name": "myDatabase",
 			"mongo": true,
 			"multitenant": false
 		}
