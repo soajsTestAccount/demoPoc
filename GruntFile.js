@@ -85,7 +85,7 @@ module.exports = function (grunt) {
 				src: 'Gruntfile.js'
 			}
 		},
-
+		
 		env: {
 			mochaTest: {
 				SOAJS_TEST: true,
@@ -102,9 +102,6 @@ module.exports = function (grunt) {
 		clean: {
 			doc: {
 				src: ['doc/']
-			},
-			coverage: {
-				src: ['test/coverage/']
 			}
 		},
 
@@ -113,21 +110,6 @@ module.exports = function (grunt) {
 			options: {
 				lazy: false,
 				basePath: 'test/coverage/instrument/'
-			}
-		},
-
-		storeCoverage: {
-			options: {
-				dir: 'test/coverage/reports'
-			}
-		},
-
-		makeReport: {
-			src: 'test/coverage/reports/**/*.json',
-			options: {
-				type: 'lcov',
-				dir: 'test/coverage/reports',
-				print: 'detail'
 			}
 		},
 
@@ -146,40 +128,7 @@ module.exports = function (grunt) {
 				},
 				src: ['test/integration/_server.test.js']
 			}
-		},
-
-		coveralls: {
-			options: {
-				// LCOV coverage file relevant to every target
-				src: 'test/coverage/reports/lcov.info',
-
-				// When true, grunt-coveralls will only print a warning rather than
-				// an error, to prevent CI builds from failing unnecessarily (e.g. if
-				// coveralls.io is down). Optional, defaults to false.
-				force: false
-			},
-			your_target: {
-				// Target-specific LCOV coverage file
-				src: 'test/coverage/reports/lcov.info'
-			}
-		},
-
-		swagger2soajs: {
-            build: {
-                options:{
-                    op: "generate",
-                    configPath: __dirname + "/config.js",
-                    swaggerPath: __dirname + "/swagger.yml"
-                }
-            },
-            rebuild: {
-                options:{
-                    op: "regenerate",
-                    configPath: __dirname + "/config.js",
-                    swaggerPath: __dirname + "/swagger.yml"
-                }
-            }
-        }
+		}
 	});
 
 	process.env.SHOW_LOGS = grunt.option('showLogs');
@@ -188,6 +137,7 @@ module.exports = function (grunt) {
     grunt.registerTask("rebuild", ['swagger2soajs:rebuild']);
 	grunt.registerTask("integration", ['env:mochaTest', 'mochaTest:integration']);
 	grunt.registerTask("unit", ['env:mochaTest', 'mochaTest:unit']);
-	grunt.registerTask("test", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration']);
-	grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit', 'mochaTest:integration', 'storeCoverage', 'makeReport', 'coveralls']);
+	grunt.registerTask("coverage", ['clean', 'env:coverage', 'instrument', 'mochaTest:unit']);
+
 };
+
