@@ -12,7 +12,7 @@ module.exports = {
 	"servicePort": 4110,
 	"requestTimeout": 30,
 	"requestTimeoutRenewal": 5,
-	"extKeyRequired": false,
+	"extKeyRequired": true,
 	"injection": true,
 	"oauth": false,
 	"urac": false,
