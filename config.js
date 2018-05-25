@@ -47,22 +47,12 @@ module.exports = {
 					"custom": {}
 				}
 			},
-			"/readMongo": {
+			"/readData": {
 				"_apiInfo": {
 					"group": "general",
-					"l": "Read from mongo"
+					"l": "Read Data from Database"
 				},
-				"mw": __dirname + "/lib/mw/readmongo_get.js",
-				"imfv": {
-					"custom": {}
-				}
-			},
-			"/readMemSql": {
-				"_apiInfo": {
-					"group": "general",
-					"l": "Read from MemSql"
-				},
-				"mw": __dirname + "/lib/mw/readmemsql_get.js",
+				"mw": __dirname + "/lib/mw/readdata_get.js",
 				"imfv": {
 					"custom": {}
 				}
