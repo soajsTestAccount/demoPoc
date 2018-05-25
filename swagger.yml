@@ -1,15 +1,21 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  version: "1.0.0"
-  title: demopoc
+    version: 1.0.0
+    title: demopoc
 host: localhost
 basePath: /demopoc
 schemes:
-  - http
+    - http
 paths:
+    /getStatic:
+        get:
+            tags:
+                - general
+            summary: 'Return a static string'
+            operationId: Returnastaticstring
     /readData:
         get:
-            summary: Read Data from Database
-parameters:
-
-definitions:
+            tags:
+                - general
+            summary: 'Read Data from Database'
+            operationId: ReadDatafromDatabase
