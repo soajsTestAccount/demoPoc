@@ -4,6 +4,7 @@ node_js: 6.9.5
 branches:
     only:
         - master
+        - develop
 addons:
     hosts:
         - localhost
